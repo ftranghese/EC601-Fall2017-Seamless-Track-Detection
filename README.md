@@ -10,6 +10,6 @@
 
 [**Machine Learning MLND-Capstone - by mvirgo**](https://github.com/mvirgo/MLND-Capstone) - 
 
-[**Advanced-Lane-and-Vehicle-Detection - by muddassir235**](https://github.com/muddassir235/Advanced-Lane-and-Vehicle-Detection) -  Program does more than we needed it to and we were unable to get the program file to run.
+[**Advanced-Lane-and-Vehicle-Detection - by muddassir235**](https://github.com/muddassir235/Advanced-Lane-and-Vehicle-Detection) -  Program does more than we needed it to and we were unable to get the program file to run.  Large program only linked insead of reuploading.
 
 [**Advanced-Lane-Lines - by NikolasEnt**](https://github.com/NikolasEnt/Advanced-Lane-Lines) - First program we tried. 
