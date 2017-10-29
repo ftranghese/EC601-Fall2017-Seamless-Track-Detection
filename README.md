@@ -8,3 +8,8 @@
 
 [**Lane Detection - by vinaykumarhs2020**](https://github.com/vinaykumarhs2020/lane_detection) - Program is only for detecting lanes on a raod in picture form and the code that is demoed for video is not included. 
 
+[**Machine Learning MLND-Capstone - by mvirgo**](https://github.com/mvirgo/MLND-Capstone) - 
+
+[**Advanced-Lane-and-Vehicle-Detection - by muddassir235**](https://github.com/muddassir235/Advanced-Lane-and-Vehicle-Detection) -  Program does more than we needed it to and we were unable to get the program file to run.
+
+[**Advanced-Lane-Lines - by NikolasEnt**](https://github.com/NikolasEnt/Advanced-Lane-Lines) - First program we tried. 
