@@ -3,9 +3,13 @@ Boston University College of Engineering - Fall 2017
 
 ## Trek - Lane Detection Project
 
-*TREK* (Tracking Rural Environments Keenly) is a semester-long project for Boston University's EC601 Product Design course. We aim to build a lane detection algorithm for unmarked roads. Our program is based on other files found on Github (links below). 
+**TREK** (Tracking Rural Environments Keenly) is a semester-long project for Boston University's EC601 Product Design course. We aim to build a lane detection algorithm for unmarked roads. Our program is based on other files found on Github (links below). 
 
-*Tested on*: Python 3.5, OpenCV 3.1.0, NumPy 1.13.3
+**Tested on**: Python 3.5, OpenCV 3.1.0, NumPy 1.13.3
+
+### Using Our Program
+
+Our program is based on the **George Sung** lane detection program, and runnable files are located in that directory. The main file to run is line_fit_video.py which will use an input video, detect/fit lanes, and produce an output video. Be sure to have the above listed versions of Python, OpenCV, and NumPy installed.
 
 ## Images and Videos
 
