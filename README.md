@@ -1,4 +1,15 @@
 # EC601-Fall2017-Seamless-Track-Detection
+Boston University College of Engineering - Fall 2017
+
+## Trek - Lane Detection Project
+
+*TREK* (Tracking Rural Environments Keenly) is a semester-long project for Boston University's EC601 Product Design course. We aim to build a lane detection algorithm for unmarked roads. Our program is based on other files found on Github (links below). 
+
+*Tested on*: Python 3.5, OpenCV 3.1.0, NumPy 1.13.3
+
+## Images and Videos
+
+Images and videos are from the [KITTI Vision Benchmark Suite](http://www.cvlibs.net/datasets/kitti/index.php) used under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License](https://creativecommons.org/licenses/by-nc-sa/3.0/) for academic purposes only.
 
 ## Lane Detection Programs Tested
 
