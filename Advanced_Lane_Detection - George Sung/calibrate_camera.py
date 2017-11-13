@@ -76,13 +76,15 @@ def calibrate_camera():
 
 
 if __name__ == '__main__':
-	mtx, dist = calibrate_camera()
-	save_dict = {'mtx': mtx, 'dist': dist}
-	with open('calibrate_camera.p', 'wb') as f:
-		pickle.dump(save_dict, f)
+	#mtx, dist = calibrate_camera()
+    mtx = np.array([[9.037596e+02,0.000000e+00,6.957519e+02],[0.000000e+00,9.019653e+02,2.242509e+02],[0.000000e+00,0.000000e+00,1.000000e+00]])
+    dist = np.array([0,0,0,0,0])
+    save_dict = {'mtx': mtx, 'dist': dist}
+    with open('calibrate_camera.p', 'wb') as f:
+        pickle.dump(save_dict, f)
 
 	# Undistort example calibration image
-	img = mpimg.imread('camera_cal/chessboard.png')
-	dst = cv2.undistort(img, mtx, dist, None, mtx)
-	plt.imshow(dst)
-	plt.savefig('example_images/undistort_calibration.png')
+	#img = mpimg.imread('camera_cal/chessboard.png')
+	#dst = cv2.undistort(img, mtx, dist, None, mtx)
+	#plt.imshow(dst)
+	#plt.savefig('example_images/undistort_calibration.png')
