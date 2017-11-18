@@ -24,7 +24,7 @@ Z = np.float32(Z)
 
 # define criteria, number of clusters(K) and apply kmeans()
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 1.0)
-K = 6
+K = 5
 ret,label,center=cv2.kmeans(Z,K,None,criteria,10,cv2.KMEANS_RANDOM_CENTERS)
 
 # Now convert back into uint8, and make original image
@@ -34,11 +34,16 @@ res2 = res.reshape((img.shape))
 
 cv2.imshow('res2',res2)
 
-hsv_lena = cv2.cvtColor(res2, cv2.COLOR_BGR2HSV) #convert to HSV
+hsv_img = cv2.cvtColor(res2, cv2.COLOR_BGR2HSV) #convert to HSV
 
-[h,s,v] = cv2.split(hsv_lena) #split into HSV channels
+[h,s,v] = cv2.split(hsv_img) #split into HSV channels
 
-[retval, thresh1] = cv2.threshold(v, 158, 255, cv2.THRESH_BINARY)
+[retval, thresh1] = cv2.threshold(v, 170, 255, cv2.THRESH_BINARY)
 cv2.imshow('Binary Threshold',thresh1)
+
+kernel = np.ones((5,5),np.uint8)
+erode = cv2.erode(thresh1,kernel,iterations = 1)
+
+cv2.imshow('Dilation',erode)
 
 cv2.waitKey(0)
