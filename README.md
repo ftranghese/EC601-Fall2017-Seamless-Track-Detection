@@ -9,7 +9,7 @@ Boston University College of Engineering - Fall 2017
 
 ### Using Our Program
 
-Our program is based on the **George Sung** lane detection program, and runnable files are located in that directory. The main file to run is line_fit_video.py which will use an input video, detect/fit lanes, and produce an output video. Be sure to have the above listed versions of Python, OpenCV, and NumPy installed.
+Our program is based on the **George Sung** lane detection program, and runnable files of the original are located in that directory. The main program to run is line_fit_video.py located in the /our_main_code/ folder which will use an input video, detect/fit lanes, and produce an output video. Be sure to have the above listed versions of Python, OpenCV, and NumPy installed.
 
 ## Images and Videos
 
