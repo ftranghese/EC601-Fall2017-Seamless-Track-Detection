@@ -9,12 +9,12 @@ def stddev(lst):
     mean = float(sum(lst)) / len(lst)
     return sqrt(float(reduce(lambda x, y: x + y, map(lambda x: (x - mean) ** 2, lst))) / len(lst)) 
 
-cap = cv2.imread("test_images/test4.jpg")
+cap = cv2.imread("test_images/043.png")
 setmin = 0
 change = 150
 #varibles for a pixel picked from middle of frame
-midpixx = 660 
-midpixy = 540
+midpixx = 290 
+midpixy = 470
 shot = 0   
 while(1):
 
