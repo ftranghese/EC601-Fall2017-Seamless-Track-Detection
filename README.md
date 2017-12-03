@@ -28,3 +28,11 @@ Images and videos are from the [KITTI Vision Benchmark Suite](http://www.cvlibs.
 [**Advanced-Lane-and-Vehicle-Detection - by muddassir235**](https://github.com/muddassir235/Advanced-Lane-and-Vehicle-Detection) -  Program does more than we needed it to and we were unable to get the program file to run.  Large program only linked insead of reuploading.
 
 [**Advanced-Lane-Lines - by NikolasEnt**](https://github.com/NikolasEnt/Advanced-Lane-Lines) - First program we tried. 
+
+## References
+
+1. Muad *et al*. **Implementation of Inverse Perspective Maping Algorithm for the Development of an Automatic Lane Tracking System**. IEEE, May 2005. [link](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1414393&tag=1)
+
+2. Wan-zhi and Zeng-cai. **Rural Road Detection of Color Image in Complicated Environment**. International Journal of Signal Processing, Image Processing and Pattern Recognition, Vol.6, No.6(2013), pp.161-168 [link](http://www.sersc.org/journals/IJSIP/vol6_no6/15.pdf)
+
+3. Seo, Young-Woo. **Detection and Tracking of Boundary of Unmarked Roads**. IEEE. October 2014 [link](http://ieeexplore.ieee.org/document/6916256/?arnumber=6916256)
