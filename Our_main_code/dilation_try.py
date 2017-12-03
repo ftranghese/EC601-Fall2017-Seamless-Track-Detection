@@ -1,3 +1,5 @@
+-# original code from https://pythonprogramming.net/morphological-transformation-python-opencv-tutorial/
+-#changed for our imaging.
 import cv2
 import numpy as np
 import matplotlib.image as mpimg
