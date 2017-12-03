@@ -82,39 +82,29 @@ def hls_thresh(img, thresh=(100, 255)):
 
 
 def combined_thresh(img):
-	#abs_bin = abs_sobel_thresh(img, orient='x', thresh_min=50, thresh_max=255)
-	#mag_bin = mag_thresh(img, sobel_kernel=3, mag_thresh=(50, 255))
-	#dir_bin = dir_threshold(img, sobel_kernel=15, thresh=(0.7, 1.3))
-	#hls_bin = hls_thresh(img, thresh=(170, 255))
 
-	#combined = np.zeros_like(dir_bin)
-	#combined[(abs_bin == 1 | ((mag_bin == 1) & (dir_bin == 1))) | hls_bin == 1] = 1
-
-	setmin = 200
-	change = 255
-	 # _, frame = cap.read()
-	hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-	frame=img 
-   # lower_red = np.array([1,150,1])
-   # upper_red = np.array([255,255,255])
-   # lower_red = np.array([0,10,80])
-   # upper_red = np.array([255,255,2155])
-	lower_red = np.array([0,10,50])
-	upper_red = np.array([100,25,200])
-    
-	mask = cv2.inRange(hsv, lower_red, upper_red)
-	res = cv2.bitwise_and(frame,frame, mask= mask)
-
-	kernel = np.ones((5,5),np.uint8)
-	erosion = cv2.erode(mask,kernel,iterations = 1)
-	dilation = cv2.dilate(mask,kernel,iterations = 1)
-	#if (change>setmin):
-	#	change -=1
-	#k = cv2.waitKey(5) & 0xFF
-	#if k == 27:
-	#	break
-
-	return dilation # DEBUG
+	#import numpy as np
+#import cv2
+#cap = cv2.VideoCapture('C:/Users/harish/Desktop/video1.mp4')
+	fgbg = cv2.createBackgroundSubtractorMOG2()
+#fourcc = cv2.VideoWriter_fourcc(*'xvid')
+#out = cv2.VideoWriter('output.avi',fourcc,20.0,(640,480))
+#while(1):
+#ret, frame = cap.read()
+	frame = img
+	frame = cv2.Canny(frame,100,200)
+	fgmask = fgbg.apply(frame)
+	#fgmask = cv2.bitwise_not(frame)
+ #   out.write(frame)
+#    cv2.imshow('original',frame)
+#    cv2.imshow('frame',fgmask)
+#    k = cv2.waitKey(30) & 0xff
+#    if k == 27:
+#        break
+#cap.release()
+#out.release()
+#cv2.destroyAllWindows()
+	return fgmask
 
 
 if __name__ == '__main__':
