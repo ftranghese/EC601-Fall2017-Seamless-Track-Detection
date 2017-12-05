@@ -3,6 +3,7 @@
 Created on Sun Dec  3 12:55:51 2017
 
 @author: Frank Tranghese
+@ref: George Sung lane detection program
 Boston University College of Engineering
 EC601 - Seamless Track Detection Project
 """
@@ -24,13 +25,13 @@ def perspective_transform2(img):
     binary = combined_thresh(img)
     
     # Take a histogram of the bottom half of the image
-    histogram = np.sum(binary[binary.shape[0]//2:,:], axis=0)
+    histogram = np.sum(binary[binary.shape[0]:,:], axis=0)
     
     # These will be the starting point for the left and right lines
     midpoint = np.int(histogram.shape[0]/2)
     leftx_base = np.argmax(histogram[100:midpoint]) + 100
     rightx_base = np.argmax(histogram[midpoint:-100]) + midpoint
-    
+
     ''' Estimates for where the vanishing point is. Assuming halfway up the image
         src is the rectangle defined by the bottom of where the left and right
         start. We then estimate the vaninishing point to be at the same point
@@ -40,8 +41,8 @@ def perspective_transform2(img):
     src = np.float32(
             [[leftx_base,img_size[1]],
             [rightx_base,img_size[1]],
-            [leftx_base+((leftx_base - midpoint)//2),img_size[1]//2],
-            [rightx_base-((midpoint - rightx_base)//2),img_size[1]//2]])
+            [leftx_base+((midpoint-leftx_base)//2),img_size[1]//2],
+            [rightx_base-((rightx_base-midpoint)//2),img_size[1]//2]])
     
     dst = np.float32(
             [[leftx_base,img_size[1]],
@@ -58,7 +59,7 @@ def perspective_transform2(img):
     return warped, unwarped, m, m_inv
 
 if __name__ == '__main__':
-    img_file = '043.png'
+    img_file = '043.jpg'
 
     with open('calibrate_camera.p', 'rb') as f:
         save_dict = pickle.load(f)
