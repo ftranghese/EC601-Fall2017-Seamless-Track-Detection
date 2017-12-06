@@ -25,12 +25,13 @@ def perspective_transform2(img):
     binary = combined_thresh(img)
     
     # Take a histogram of the bottom half of the image
-    histogram = np.sum(binary[binary.shape[0]:,:], axis=0)
+    histogram = np.sum(binary[binary.shape[0]//2:,:], axis=0)
     
     # These will be the starting point for the left and right lines
-    midpoint = np.int(histogram.shape[0]/2)
+    midpoint = np.argmax(histogram)
     leftx_base = np.argmax(histogram[100:midpoint]) + 100
     rightx_base = np.argmax(histogram[midpoint:-100]) + midpoint
+    
 
     ''' Estimates for where the vanishing point is. Assuming halfway up the image
         src is the rectangle defined by the bottom of where the left and right
@@ -74,5 +75,5 @@ if __name__ == '__main__':
     plt.imshow(warped, cmap='gray', vmin=0, vmax=1)
     plt.show()
 
-    plt.imshow(unwarped, cmap='gray', vmin=0, vmax=1)
-    plt.show()
+    #plt.imshow(unwarped, cmap='gray', vmin=0, vmax=1)
+    #plt.show()
