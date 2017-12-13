@@ -83,28 +83,31 @@ def hls_thresh(img, thresh=(100, 255)):
 
 def combined_thresh(img):
 
-	#import numpy as np
-#import cv2
-#cap = cv2.VideoCapture('C:/Users/harish/Desktop/video1.mp4')
-	fgbg = cv2.createBackgroundSubtractorMOG2()
-#fourcc = cv2.VideoWriter_fourcc(*'xvid')
-#out = cv2.VideoWriter('output.avi',fourcc,20.0,(640,480))
-#while(1):
-#ret, frame = cap.read()
-	frame = img
-	frame = cv2.Canny(frame,100,200)
-	fgmask = fgbg.apply(frame)
-	#fgmask = cv2.bitwise_not(frame)
- #   out.write(frame)
-#    cv2.imshow('original',frame)
-#    cv2.imshow('frame',fgmask)
-#    k = cv2.waitKey(30) & 0xff
-#    if k == 27:
-#        break
-#cap.release()
-#out.release()
-#cv2.destroyAllWindows()
-	return fgmask
+	setmin = 200
+	change = 255
+	 # _, frame = cap.read()
+	hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+	frame=img 
+   # lower_red = np.array([1,150,1])
+   # upper_red = np.array([255,255,255])
+   # lower_red = np.array([0,10,80])
+   # upper_red = np.array([255,255,2155])
+	lower_red = np.array([0,10,50])
+	upper_red = np.array([100,25,200])
+    
+	mask = cv2.inRange(hsv, lower_red, upper_red)
+	res = cv2.bitwise_and(frame,frame, mask= mask)
+
+	kernel = np.ones((5,5),np.uint8)
+	erosion = cv2.erode(mask,kernel,iterations = 1)
+	dilation = cv2.dilate(mask,kernel,iterations = 1)
+	#if (change>setmin):
+	#	change -=1
+	#k = cv2.waitKey(5) & 0xFF
+	#if k == 27:
+	#	break
+
+	return dilation
 
 
 if __name__ == '__main__':
