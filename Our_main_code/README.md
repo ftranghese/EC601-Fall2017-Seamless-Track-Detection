@@ -1,4 +1,7 @@
-# Advanced Lane Detection
+
+
+
+## Orginal directons from George Sung dependencies and file instructions are still the same as Advanced Lane Detection
 ![annotated](output_images/annotated_test2.png)
 ## Overview
 Detect lanes using computer vision techniques. This project is part of the [Udacity Self-Driving Car Nanodegree](https://www.udacity.com/drive), and much of the code is leveraged from the lecture notes.
@@ -135,3 +138,7 @@ Below is the final annotated version of our original image. For all images in 't
 
 ## Discussion
 This is an initial version of advanced computer-vision-based lane finding. There are multiple scenarios where this lane finder would not work. For example, the Udacity challenge video includes roads with cracks which could be mistaken as lane lines (see 'challenge_video.mp4'). Also, it is possible that other vehicles in front would trick the lane finder into thinking it was part of the lane. More work can be done to make the lane detector more robust, e.g. [deep-learning-based semantic segmentation](https://arxiv.org/pdf/1605.06211.pdf) to find pixels that are likely to be lane markers (then performing polyfit on only those pixels).
+
+##Our Changes
+Dilation_try.py - our first attempt at morphophology using fixed values 
+Dilation_try_new.py - our improved code at morphology based on picking a pixel on the road and averaging around it to determine our road highlight. 
